@@ -30,7 +30,7 @@
     "dependencies": {
         "path": "^0.12.7",
         "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^0.0.9",
-        "get-components-ext": "beatthat/get-components-ext#semver:^0.0.1",
-        "transform-path-ext": "beatthat/transform-path-ext#semver:^0.0.1"
+        "get-components-ext": "beatthat/get-components-ext#semver:^0.0.2",
+        "transform-path-ext": "beatthat/transform-path-ext#semver:^0.0.4"
     }
 }
