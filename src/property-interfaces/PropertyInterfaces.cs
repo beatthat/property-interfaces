@@ -83,6 +83,12 @@ namespace BeatThat
 	public interface IDrive 
 	{
 		object GetDrivenObject();
+
+		/// <summary>
+		/// Used when loop is detected
+		/// </summary>
+		/// <returns><c>true</c>, if driven was cleared, <c>false</c> otherwise.</returns>
+		bool ClearDriven();
 	}
 
 	/// <summary>
