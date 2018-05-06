@@ -1,7 +1,7 @@
 {
   "name": "property-interfaces",
   "scope": "beatthat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Interfaces for property components, which generally expose a single typed value with getter, setter, and/or update event.",
   "main": "index.js",
   "repository": {
