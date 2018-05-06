@@ -6,7 +6,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beatthat/unity-property-interfaces.git"
+    "url": "git+https://github.com/beatthat/property-interfaces.git"
   },
   "files": [
     "index.js",
