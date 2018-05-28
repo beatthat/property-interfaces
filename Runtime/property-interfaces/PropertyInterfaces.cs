@@ -17,12 +17,19 @@ namespace BeatThat
 
 	public interface IHasColorBlock : IHasValue<ColorBlock> {}
 		
-	public interface IHasTextInput : IHasText
+	public interface IHasTextInput : IHasText, IHasValueChangedEvent<string>
 	{
 		void ActivateInput();
+
+		UnityEvent<string> onSubmit { get; }
 	}
 
-	public interface IHasValue<T>
+	public interface IHasValue
+	{
+		object valueObj { get; }
+	}
+
+	public interface IHasValue<T> : IHasValue
 	{
 		T value { get; set; }
 	}
@@ -39,10 +46,12 @@ namespace BeatThat
 
 	public interface IHasClick 
 	{
+		#if HAS_CLICK_LEGACY
 		bool interactable { get; set; }
+		[Obsolete("use UnityEvent onValueChanged")]event Action Clicked; // TODO: replace with UnityEvent
+		#endif
 
 		UnityEvent onClicked { get; }
-		[Obsolete("use UnityEvent onValueChanged")]event Action Clicked; // TODO: replace with UnityEvent
 	}
 
 	public interface IHasValueObjChanged
