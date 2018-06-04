@@ -1,4 +1,4 @@
-﻿namespace BeatThat
+namespace BeatThat
 {
 	public interface HasPlay 
 	{
