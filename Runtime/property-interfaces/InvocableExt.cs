@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace BeatThat
-{
+namespace BeatThat.Properties{
 	public static class InvocableExt
 	{
 		/// <summary>

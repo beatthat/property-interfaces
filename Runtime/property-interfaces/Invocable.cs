@@ -1,8 +1,7 @@
 using UnityEngine;
 
 
-namespace BeatThat
-{
+namespace BeatThat.Properties{
 	public interface Invocable
 	{
 		void Invoke();

@@ -3,8 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace BeatThat
-{
+namespace BeatThat.Properties{
 	public interface IHasTexture : IHasValue<Texture> {}
 
 	public interface IEditsTexture : IHasTexture, IHasValueChangedEvent {}

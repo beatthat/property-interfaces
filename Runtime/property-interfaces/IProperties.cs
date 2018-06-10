@@ -1,5 +1,4 @@
-namespace BeatThat
-{
+namespace BeatThat.Properties{
 	public interface IProperties 
 	{
 

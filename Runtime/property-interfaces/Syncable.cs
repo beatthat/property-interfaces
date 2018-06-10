@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace BeatThat
-{
+namespace BeatThat.Properties{
 	public interface Syncable 
 	{
 		void Sync();

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Events;
 
 
-namespace BeatThat
-{
+namespace BeatThat.Properties{
 	/// <summary>
 	/// Specifies desired event behaviour when setting a property that has an onChanged event.
 	/// 
