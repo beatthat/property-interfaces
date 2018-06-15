@@ -33,6 +33,8 @@ namespace BeatThat.Properties{
 		T value { get; set; }
 	}
 
+    public interface IHasProp<T> : IHasValue<T>, IHasValueChangedEvent<T> {}
+
 	public interface IHasFloat : IHasValue<float> {}
 
 	public interface IHasInt : IHasValue<int> {}

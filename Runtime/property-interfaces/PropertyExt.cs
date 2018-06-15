@@ -1,11 +1,14 @@
-using UnityEngine;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
+using BeatThat.GetComponentsExt;
+using BeatThat.Pools;
+using BeatThat.TransformPathExt;
+using UnityEngine;
 
 namespace BeatThat.Properties
 {
 
-	public enum MissingComponentOptions { AddAndWarn = 0, CancelAndWarn = 1, Add = 2, Cancel = 3,  ThrowException = 4 }
+    public enum MissingComponentOptions { AddAndWarn = 0, CancelAndWarn = 1, Add = 2, Cancel = 3,  ThrowException = 4 }
 
 
 	/// <summary>
@@ -423,4 +426,8 @@ namespace BeatThat.Properties
 		}
 	}
 }
+
+
+
+
 

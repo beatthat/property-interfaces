@@ -1,3 +1,4 @@
+using BeatThat.TransformPathExt;
 using UnityEngine;
 
 namespace BeatThat.Properties{
@@ -43,3 +44,4 @@ namespace BeatThat.Properties{
 		}
 	}
 }
+

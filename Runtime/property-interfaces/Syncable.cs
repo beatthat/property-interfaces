@@ -1,3 +1,4 @@
+using BeatThat.Pools;
 using UnityEngine;
 
 namespace BeatThat.Properties{
@@ -26,3 +27,4 @@ namespace BeatThat.Properties{
 		}
 	}
 }
+
