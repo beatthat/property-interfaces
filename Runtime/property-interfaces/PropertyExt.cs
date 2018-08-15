@@ -20,6 +20,19 @@ namespace BeatThat.Properties
 	/// </summary>
 	public static class PropertyExtensions
 	{
+        /// <summary>
+        /// Extension method adds a null check to setting a value on any IHasValue&gt;T&lt;
+        /// So you can safely call myHasValue.Set(value), even if myHasValue is null.
+        /// </summary>
+        public static void Set<T>(this IHasValue<T> target, T value)
+        {
+            if (target == null)
+            {
+                return;
+            }
+            target.value = value;
+        }
+
 		public static void SetBool<T>(this GameObject go, bool value,
 			MissingComponentOptions opts = MissingComponentOptions.AddAndWarn) where T : Component, IHasBool
 		{
