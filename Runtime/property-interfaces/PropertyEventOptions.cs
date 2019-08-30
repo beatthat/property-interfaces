@@ -18,32 +18,62 @@ namespace BeatThat.Properties{
 		Force = 2
 	}
 
-	public static class PropertyEventOptionsExt
-	{
-		public static void Set<T>(this PropertyEventOptions opt, ref T prop, T val, Action changeEvent)
-		{
-			if(EqualityComparer<T>.Default.Equals(prop, val) && opt != PropertyEventOptions.Force) {
-				return;
-			}
+    public static class PropertyEventOptionsExt
+    {
+        public static bool Set<T>(this PropertyEventOptions opt, ref T prop, T val, Action changeEvent)
+        {
+            if (!SetThenShouldNotify(opt, ref prop, val))
+            {
+                return false;
+            }
+            changeEvent?.Invoke();
+            return true;
+        }
 
-			prop = val;
+        public static bool Set<T>(this PropertyEventOptions opt, ref T prop, T val, Action<T> changeEvent)
+        {
+            if (!SetThenShouldNotify(opt, ref prop, val))
+            {
+                return false;
+            }
+            changeEvent?.Invoke(val);
+            return true;
+        }
 
-			if(opt != PropertyEventOptions.Disable && changeEvent != null) {
-				changeEvent();
-			}
-		}
+        public static bool Set<T>(this PropertyEventOptions opt, ref T prop, T val, UnityEvent changeEvent)
+        {
+            if (!SetThenShouldNotify(opt, ref prop, val))
+            {
+                return false;
+            }
+            if (changeEvent != null)
+            {
+                changeEvent.Invoke();
+            }
+            return true;
+        }
 
-		public static void Set<T>(this PropertyEventOptions opt, ref T prop, T val, UnityEvent changeEvent)
-		{
-			if(EqualityComparer<T>.Default.Equals(prop, val) && opt != PropertyEventOptions.Force) {
-				return;
-			}
+        public static bool Set<T>(this PropertyEventOptions opt, ref T prop, T val, UnityEvent<T> changeEvent)
+        {
+            if (!SetThenShouldNotify(opt, ref prop, val))
+            {
+                return false;
+            }
+            if (changeEvent != null)
+            {
+                changeEvent.Invoke(val);
+            }
+            return true;
+        }
 
-			prop = val;
-
-			if(opt != PropertyEventOptions.Disable && changeEvent != null) {
-				changeEvent.Invoke ();
-			}
-		}
-	}
+        private static bool SetThenShouldNotify<T>(this PropertyEventOptions opt, ref T prop, T val)
+        {
+            if (EqualityComparer<T>.Default.Equals(prop, val) && opt != PropertyEventOptions.Force)
+            {
+                return false;
+            }
+            prop = val;
+            return opt != PropertyEventOptions.Disable;
+        }
+    }
 }
